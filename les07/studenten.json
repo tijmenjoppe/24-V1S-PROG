@@ -1,0 +1,38 @@
+{
+	"klas": "TICT-V1S",
+	"studenten": [
+		{
+			"studentnummer": 1833662,
+			"achternaam": "Mooij",
+			"voornaam": "Jente",
+			"actief": true,
+			"cijfers":
+				{
+					"PROG": 8.9,
+					"PROJA": 8.0
+				}
+		},
+		{
+			"studentnummer": 1837467,
+			"achternaam": "Alec",
+			"voornaam": "Heijnemans",
+			"actief": true,
+			"cijfers":
+				{
+					"PROG": 8.0,
+					"PROJA": 8.9
+				}
+		},
+		{
+			"studentnummer": 1785933,
+			"achternaam": "Kwant",
+			"voornaam": "Roald",
+			"actief": false,
+			"cijfers":
+				{
+					"PROG": null,
+					"PROJA": null
+				}
+		}
+	]
+}
