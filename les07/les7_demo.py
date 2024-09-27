@@ -50,13 +50,14 @@ def wordcount(text: str):
 
 artikel_tel = wordcount(artikel)
 
-# for (woord, aantal) in artikel_tel.items():
-#     print(f"'{woord}' komt {aantal} keer voor")
+for (woord, aantal) in artikel_tel.items():
+    print(f"'{woord}' komt {aantal} keer voor")
 
 phonebook = {
     ('Anna', 'Karenina'): '(123) 456-78-90',
     ('Yu', 'Tsun'): '(901) 234-56-78',
     ('Hans', 'Castorp'): '(321) 908-76-54'}
+
 
 def lookup(lookup_dict):
     while True:
@@ -84,9 +85,56 @@ pp = pprint.PrettyPrinter(indent=4)
 with open("studenten.json") as json_bestand:
     data = json.load(json_bestand)
 
-# print(data['studenten'][0])
-
 pp.pprint(data['studenten'][0])
 
 for student in data['studenten']:
     print(f'{student["voornaam"]} heeft voor PROG een {student["cijfers"]["PROG"]}')
+
+
+import random
+
+
+def lookup_iter(lookup_dict, vnaam, anaam):
+    naam = (vnaam, anaam)
+
+    for k, v in lookup_dict.items():
+        if k == naam:
+            return lookup_dict[naam]
+
+    # Naam niet gevonden
+    return -1
+
+
+def lookup_in(lookup_dict, vnaam, anaam):
+    naam = (vnaam, anaam)
+
+    if naam in lookup_dict:
+        return lookup_dict[naam]
+    else:
+        # Naam niet gevonden
+        return -1
+
+
+phonebook = dict()
+for voorletter in range(97, 123):
+    for achterletter in range(97, 123):
+        # Maak een telefoonnummer voor alle voor- en achterletter combinaties (a..z)
+        phonebook[(chr(voorletter), chr(achterletter))] = random.randrange(1_000_000_000)
+
+print('Grootte telefoonboek:', len(phonebook))   # zou 26 x 26 = 676 velden moeten hebben
+print('Direct: ', phonebook[('t', 'm')])
+print('lookup_iter: ', lookup_iter(phonebook, 't', 'm'))
+print('lookup_in: ', lookup_in(phonebook, 't', 'm'))
+
+
+import timeit  # Zie https://docs.python.org/3/library/timeit.html
+test_iter = timeit.timeit("lookup_iter(phonebook, chr(random.randrange(97, 123)), chr(random.randrange(97,123)))",
+                      globals=globals())
+
+test_in = timeit.timeit("lookup_in(phonebook, chr(random.randrange(97, 123)), chr(random.randrange(97,123)))",
+                      globals=globals())
+
+print(f'lookup_iter: {test_iter}s')
+print(f'lookup_in: {test_in}s')
+print(f'gebruik van `in` i.p.v. lus is factor {test_iter/test_in}x sneller')
+
