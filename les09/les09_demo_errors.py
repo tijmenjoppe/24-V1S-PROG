@@ -13,4 +13,4 @@ while True:
     else:
         break
     finally:
-        print("Nog een keer!")
+        print("Dat was leuk!")
