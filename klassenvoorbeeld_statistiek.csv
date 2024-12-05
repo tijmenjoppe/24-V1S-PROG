@@ -1,0 +1,27 @@
+﻿#;Naam;Lengte;Geboortejaar;Schoenmaat;Oogkleur;Statistiek is leuk;;Scatterplot op twee variabelen
+1;Fabian;193;2007;44;groen;eens;;
+2;Jonah;185;2004;44;blauw;oneens;;
+3;Lorenzo;162;2004;43;bruin;eens;;
+4;Aya;172;2005;42;bruin;neutraal;;
+5;Jente;170;2003;38;blauw;neutraal;;
+6;Dominik;182;1992;42;blauw;eens;;
+7;Freya;158;2003;36;bruin;neutraal;;
+8;Laura;175;2007;39;blauw;eens;;
+;;;;;;;;
+Meetniveau;;;;;;;;
+;;;;;;;;
+Statistiek is leuk;Frequentie;Cum. Frequentie;Relatieve frequentie;Cum. rel. frequentie;;;;
+helemaal oneens;;;;;;;;
+oneens;;;;;;;;
+neutraal;;;;;;;;
+mee eens;;;;;;;;
+helemaal mee eens;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;Gemiddelde;Modus;Mediaan;;;;;
+Lengte;;;;;;;;
+Geboortejaar;;;;;;;;Vragen
+Schoenmaat;;;;;;;;Wat is een 'observatie'?
+Oogkleur;;;;;;;;Wat is 'data'?
+Statistiek is leuk;;;;;;;;Wat een variabele? En wat is afhankelijk en onafhankelijk?
